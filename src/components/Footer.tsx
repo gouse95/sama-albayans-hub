@@ -58,14 +58,6 @@ const Footer = () => {
                 Call Now
               </a>
               <a 
-                href="https://wa.me/971542359965"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block border border-secondary-foreground/30 px-4 py-2 rounded-lg text-center font-medium hover:bg-secondary-foreground/10 transition-colors"
-              >
-                WhatsApp
-              </a>
-              <a 
                 href="mailto:samaalbayan.ts@gmail.com"
                 className="block border border-secondary-foreground/30 px-4 py-2 rounded-lg text-center font-medium hover:bg-secondary-foreground/10 transition-colors"
               >
