@@ -6,8 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -24,8 +26,8 @@ const Contact = () => {
     console.log('Form submitted:', formData);
     
     toast({
-      title: "Request Sent!",
-      description: "We'll contact you shortly to discuss your project.",
+      title: t('contact.toast.title'),
+      description: t('contact.toast.description'),
     });
 
     // Reset form
@@ -48,26 +50,26 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Call Us",
+      titleKey: "contact.info.call",
       details: ["+971 54 235 9965", "+971 54 797 9961"],
       action: () => window.location.href = "tel:+971542359965"
     },
     {
       icon: Mail,
-      title: "Email Us", 
+      titleKey: "contact.info.email", 
       details: ["samaalbayan.ts@gmail.com"],
       action: () => window.location.href = "mailto:samaalbayan.ts@gmail.com"
     },
     {
       icon: MapPin,
-      title: "Service Areas",
+      titleKey: "contact.info.areas",
       details: ["Dubai, UAE", "Sharjah, UAE"],
       action: null
     },
     {
       icon: Clock,
-      title: "Working Hours",
-      details: ["24/7 Emergency Service", "Mon-Sat: 8AM-8PM"],
+      titleKey: "contact.info.hours",
+      detailsKeys: ["contact.info.emergency", "contact.info.businessHours"],
       action: null
     }
   ];
@@ -77,11 +79,10 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-            Get Your Free Quote
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your project? Contact us today for a free consultation 
-            and detailed quote tailored to your needs.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -101,9 +102,13 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-secondary mb-2 group-hover:text-primary transition-colors">
-                        {info.title}
+                        {t(info.titleKey)}
                       </h3>
-                      {info.details.map((detail, detailIndex) => (
+                      {info.detailsKeys ? info.detailsKeys.map((detailKey, detailIndex) => (
+                        <p key={detailIndex} className="text-muted-foreground text-sm">
+                          {t(detailKey)}
+                        </p>
+                      )) : info.details.map((detail, detailIndex) => (
                         <p key={detailIndex} className="text-muted-foreground text-sm">
                           {detail}
                         </p>
@@ -116,7 +121,7 @@ const Contact = () => {
 
             {/* Quick Actions */}
             <div className="bg-secondary rounded-xl p-6 text-center">
-              <h3 className="font-bold text-secondary-foreground mb-4">Need Immediate Help?</h3>
+              <h3 className="font-bold text-secondary-foreground mb-4">{t('contact.quickActions.title')}</h3>
               <div className="space-y-3">
                 <Button 
                   variant="cta" 
@@ -124,7 +129,7 @@ const Contact = () => {
                   onClick={() => window.location.href = "tel:+971542359965"}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  Emergency Call
+                  {t('contact.quickActions.emergencyCall')}
                 </Button>
               </div>
             </div>
@@ -135,26 +140,26 @@ const Contact = () => {
             <Card className="border-0 shadow-medium">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl font-bold text-secondary text-center">
-                  Request Your Free Quote
+                  {t('contact.form.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="name" className="text-secondary font-medium">Full Name *</Label>
+                      <Label htmlFor="name" className="text-secondary font-medium">{t('contact.form.name')}</Label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        placeholder="Your full name"
+                        placeholder={t('contact.form.namePlaceholder')}
                         className="mt-2"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone" className="text-secondary font-medium">Phone Number *</Label>
+                      <Label htmlFor="phone" className="text-secondary font-medium">{t('contact.form.phone')}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -162,27 +167,27 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        placeholder="+971 XX XXX XXXX"
+                        placeholder={t('contact.form.phonePlaceholder')}
                         className="mt-2"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-secondary font-medium">Email Address</Label>
+                    <Label htmlFor="email" className="text-secondary font-medium">{t('contact.form.email')}</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="your.email@example.com"
+                      placeholder={t('contact.form.emailPlaceholder')}
                       className="mt-2"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="service" className="text-secondary font-medium">Service Needed *</Label>
+                    <Label htmlFor="service" className="text-secondary font-medium">{t('contact.form.service')}</Label>
                     <select
                       id="service"
                       name="service"
@@ -191,29 +196,29 @@ const Contact = () => {
                       required
                       className="w-full mt-2 px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                     >
-                      <option value="">Select a service</option>
-                      <option value="Carpentry & Woodworks">Carpentry & Woodworks</option>
-                      <option value="Tabook, Plaster & Block Works">Tabook, Plaster & Block Works</option>
-                      <option value="Tile Fixing & Interlock Works">Tile Fixing & Interlock Works</option>
-                      <option value="Plumbing & Sanitary Works">Plumbing & Sanitary Works</option>
-                      <option value="Electrical Works">Electrical Works</option>
-                      <option value="Painting & Finishing">Painting & Finishing</option>
-                      <option value="False Ceiling & Gypsum Works">False Ceiling & Gypsum Works</option>
-                      <option value="AC Installation & Maintenance">AC Installation & Maintenance</option>
-                      <option value="Multiple Services">Multiple Services</option>
-                      <option value="Other">Other</option>
+                      <option value="">{t('contact.form.servicePlaceholder')}</option>
+                      <option value="Carpentry & Woodworks">{t('contact.services.carpentry')}</option>
+                      <option value="Tabook, Plaster & Block Works">{t('contact.services.masonry')}</option>
+                      <option value="Tile Fixing & Interlock Works">{t('contact.services.tiling')}</option>
+                      <option value="Plumbing & Sanitary Works">{t('contact.services.plumbing')}</option>
+                      <option value="Electrical Works">{t('contact.services.electrical')}</option>
+                      <option value="Painting & Finishing">{t('contact.services.painting')}</option>
+                      <option value="False Ceiling & Gypsum Works">{t('contact.services.ceiling')}</option>
+                      <option value="AC Installation & Maintenance">{t('contact.services.ac')}</option>
+                      <option value="Multiple Services">{t('contact.services.multiple')}</option>
+                      <option value="Other">{t('contact.services.other')}</option>
                     </select>
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-secondary font-medium">Project Details *</Label>
+                    <Label htmlFor="message" className="text-secondary font-medium">{t('contact.form.message')}</Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      placeholder="Please describe your project, timeline, and any specific requirements..."
+                      placeholder={t('contact.form.messagePlaceholder')}
                       rows={4}
                       className="mt-2"
                     />
@@ -225,12 +230,11 @@ const Contact = () => {
                     size="lg"
                     className="w-full text-lg py-6"
                   >
-                    Send Quote Request
+                    {t('contact.form.submit')}
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">
-                    * We'll respond within 2 hours during business hours. 
-                    For emergencies, please call directly.
+                    {t('contact.form.disclaimer')}
                   </p>
                 </form>
               </CardContent>

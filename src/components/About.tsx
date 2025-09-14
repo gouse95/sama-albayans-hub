@@ -1,27 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import { CheckCircle, Clock, Shield, Users } from "lucide-react";
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: CheckCircle,
-      title: "Quality Assured",
-      description: "Every project completed to the highest standards with quality materials"
+      titleKey: "about.cards.quality.title",
+      descriptionKey: "about.cards.quality.description"
     },
     {
       icon: Clock,
-      title: "24/7 Availability", 
-      description: "Emergency services available round the clock for urgent repairs"
+      titleKey: "about.cards.availability.title",
+      descriptionKey: "about.cards.availability.description"
     },
     {
       icon: Shield,
-      title: "Licensed & Insured",
-      description: "Fully licensed professionals with comprehensive insurance coverage"
+      titleKey: "about.cards.licensed.title",
+      descriptionKey: "about.cards.licensed.description"
     },
     {
       icon: Users,
-      title: "Experienced Team",
-      description: "Skilled technicians with years of experience in UAE market"
+      titleKey: "about.cards.experienced.title",
+      descriptionKey: "about.cards.experienced.description"
     }
   ];
 
@@ -32,11 +35,10 @@ const About = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-              Why Choose Sama Albayan?
+              {t('about.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              With years of experience serving Dubai and Sharjah, we've built our reputation 
-              on delivering exceptional technical services that exceed customer expectations.
+              {t('about.subtitle')}
             </p>
             
             <div className="space-y-6 mb-8">
@@ -45,8 +47,8 @@ const About = () => {
                   <CheckCircle className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2">Comprehensive Services</h3>
-                  <p className="text-muted-foreground">From carpentry to AC maintenance, we're your one-stop solution for all technical needs.</p>
+                  <h3 className="font-semibold text-secondary mb-2">{t('about.features.comprehensive.title')}</h3>
+                  <p className="text-muted-foreground">{t('about.features.comprehensive.description')}</p>
                 </div>
               </div>
               
@@ -55,8 +57,8 @@ const About = () => {
                   <CheckCircle className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2">Local Expertise</h3>
-                  <p className="text-muted-foreground">Deep understanding of UAE building standards and climate requirements.</p>
+                  <h3 className="font-semibold text-secondary mb-2">{t('about.features.local.title')}</h3>
+                  <p className="text-muted-foreground">{t('about.features.local.description')}</p>
                 </div>
               </div>
               
@@ -65,17 +67,16 @@ const About = () => {
                   <CheckCircle className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2">Competitive Pricing</h3>
-                  <p className="text-muted-foreground">Fair, transparent pricing with free estimates for all projects.</p>
+                  <h3 className="font-semibold text-secondary mb-2">{t('about.features.pricing.title')}</h3>
+                  <p className="text-muted-foreground">{t('about.features.pricing.description')}</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-primary-soft rounded-xl p-6">
-              <h3 className="font-bold text-secondary mb-3">Manager: Mohammed Basheer Ahamed</h3>
+              <h3 className="font-bold text-secondary mb-3">{t('about.manager.title')}</h3>
               <p className="text-muted-foreground">
-                Leading our team with extensive experience in technical services across the UAE. 
-                Committed to delivering excellence in every project.
+                {t('about.manager.description')}
               </p>
             </div>
           </div>
@@ -93,10 +94,10 @@ const About = () => {
                     <feature.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <h3 className="font-bold text-secondary mb-3 group-hover:text-primary transition-colors">
-                    {feature.title}
+                    {t(feature.titleKey)}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    {feature.description}
+                    {t(feature.descriptionKey)}
                   </p>
                 </CardContent>
               </Card>
@@ -106,22 +107,14 @@ const About = () => {
 
         {/* Stats */}
         <div className="mt-20 bg-secondary rounded-2xl p-8 lg:p-12 text-center">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-secondary-foreground">
-              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">500+</div>
-              <p className="text-secondary-foreground/80">Projects Completed</p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-md mx-auto">
             <div className="text-secondary-foreground">
               <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">24/7</div>
-              <p className="text-secondary-foreground/80">Emergency Service</p>
-            </div>
-            <div className="text-secondary-foreground">
-              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">5+</div>
-              <p className="text-secondary-foreground/80">Years Experience</p>
+              <p className="text-secondary-foreground/80">{t('about.stats.emergency')}</p>
             </div>
             <div className="text-secondary-foreground">
               <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">100%</div>
-              <p className="text-secondary-foreground/80">Customer Satisfaction</p>
+              <p className="text-secondary-foreground/80">{t('about.stats.satisfaction')}</p>
             </div>
           </div>
         </div>

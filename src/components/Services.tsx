@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import { 
   Wrench, 
   Zap, 
@@ -11,54 +12,56 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  const { t } = useTranslation();
+  
   const services = [
     {
       icon: Hammer,
-      title: "Carpentry & Woodworks",
-      description: "Custom furniture, cabinets, doors, and all woodworking solutions",
-      features: ["Custom Furniture", "Cabinet Installation", "Door Repair", "Wood Finishing"]
+      titleKey: "services.carpentry.title",
+      descriptionKey: "services.carpentry.description",
+      featuresKey: "services.carpentry.features"
     },
     {
       icon: Home,
-      title: "Tabook, Plaster & Block Works", 
-      description: "Professional masonry, plastering, and structural block work",
-      features: ["Wall Construction", "Plastering", "Block Installation", "Surface Preparation"]
+      titleKey: "services.masonry.title",
+      descriptionKey: "services.masonry.description",
+      featuresKey: "services.masonry.features"
     },
     {
       icon: Settings,
-      title: "Tile Fixing & Interlock Works",
-      description: "Precision tile installation and interlock pavement solutions",
-      features: ["Ceramic Tiles", "Marble Installation", "Interlock Pavement", "Waterproofing"]
+      titleKey: "services.tiling.title",
+      descriptionKey: "services.tiling.description",
+      featuresKey: "services.tiling.features"
     },
     {
       icon: Droplets,
-      title: "Plumbing & Sanitary Works",
-      description: "Complete plumbing solutions from repairs to full installations",
-      features: ["Pipe Installation", "Leak Repairs", "Bathroom Fitting", "Water Systems"]
+      titleKey: "services.plumbing.title",
+      descriptionKey: "services.plumbing.description",
+      featuresKey: "services.plumbing.features"
     },
     {
       icon: Zap,
-      title: "Electrical Works",
-      description: "Safe and reliable electrical installations and maintenance",
-      features: ["Wiring Installation", "Switch Repair", "Circuit Breakers", "Safety Inspections"]
+      titleKey: "services.electrical.title",
+      descriptionKey: "services.electrical.description",
+      featuresKey: "services.electrical.features"
     },
     {
       icon: PaintBucket,
-      title: "Painting & Finishing",
-      description: "Professional interior and exterior painting services",
-      features: ["Interior Painting", "Exterior Coating", "Wall Preparation", "Color Consultation"]
+      titleKey: "services.painting.title",
+      descriptionKey: "services.painting.description",
+      featuresKey: "services.painting.features"
     },
     {
       icon: Wrench,
-      title: "False Ceiling & Gypsum Works",
-      description: "Modern ceiling solutions and decorative gypsum installations",
-      features: ["False Ceiling", "Gypsum Decoration", "Lighting Integration", "Acoustic Solutions"]
+      titleKey: "services.ceiling.title",
+      descriptionKey: "services.ceiling.description",
+      featuresKey: "services.ceiling.features"
     },
     {
       icon: Wind,
-      title: "AC Installation & Maintenance",
-      description: "Complete air conditioning services for optimal comfort",
-      features: ["AC Installation", "Regular Maintenance", "Duct Cleaning", "System Repair"]
+      titleKey: "services.ac.title",
+      descriptionKey: "services.ac.description",
+      featuresKey: "services.ac.features"
     }
   ];
 
@@ -67,11 +70,10 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-            Our Professional Services
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive technical solutions delivered by experienced professionals 
-            with a commitment to quality and reliability.
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -87,15 +89,15 @@ const Services = () => {
                   <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
                 </div>
                 <CardTitle className="text-xl font-bold text-secondary group-hover:text-primary transition-colors">
-                  {service.title}
+                  {t(service.titleKey)}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="text-muted-foreground mb-4 text-center">
-                  {service.description}
+                  {t(service.descriptionKey)}
                 </CardDescription>
                 <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
+                  {(t(service.featuresKey, { returnObjects: true }) as string[]).map((feature: string, featureIndex: number) => (
                     <li key={featureIndex} className="flex items-center text-sm text-secondary/80">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
@@ -111,17 +113,16 @@ const Services = () => {
         <div className="text-center mt-16">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-medium max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-secondary mb-4">
-              Need a Custom Solution?
+              {t('services.customSolution.title')}
             </h3>
             <p className="text-muted-foreground mb-6">
-              Can't find exactly what you're looking for? We provide customized technical 
-              solutions tailored to your specific requirements.
+              {t('services.customSolution.description')}
             </p>
             <a 
               href="tel:+971542359965" 
               className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-brand"
             >
-              Discuss Your Project
+              {t('services.customSolution.button')}
             </a>
           </div>
         </div>

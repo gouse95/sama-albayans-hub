@@ -1,6 +1,8 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12">
@@ -8,13 +10,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              <span className="text-primary">SAMA ALBAYAN</span>
+              <span className="text-primary">{t('footer.companyName')}</span>
               <br />
-              Technical Services
+              {t('footer.companyType')}
             </h3>
             <p className="text-secondary-foreground/80 mb-6 leading-relaxed">
-              Your trusted partner for all technical services in Dubai & Sharjah. 
-              Professional quality with 24/7 reliability.
+              {t('footer.description')}
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -27,41 +28,41 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">Dubai & Sharjah, UAE</span>
+                <span className="text-sm">{t('footer.serviceAreas')}</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-primary">Our Services</h4>
+            <h4 className="text-lg font-semibold mb-4 text-primary">{t('footer.servicesTitle')}</h4>
             <ul className="space-y-2 text-sm text-secondary-foreground/80">
-              <li>Carpentry & Woodworks</li>
-              <li>Plumbing & Sanitary Works</li>
-              <li>Electrical Works</li>
-              <li>Painting & Finishing</li>
-              <li>AC Installation & Maintenance</li>
-              <li>Tile Fixing & Interlock Works</li>
-              <li>False Ceiling & Gypsum Works</li>
-              <li>Tabook, Plaster & Block Works</li>
+              <li>{t('footer.services.carpentry')}</li>
+              <li>{t('footer.services.plumbing')}</li>
+              <li>{t('footer.services.electrical')}</li>
+              <li>{t('footer.services.painting')}</li>
+              <li>{t('footer.services.ac')}</li>
+              <li>{t('footer.services.tiling')}</li>
+              <li>{t('footer.services.ceiling')}</li>
+              <li>{t('footer.services.masonry')}</li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-primary">Quick Contact</h4>
+            <h4 className="text-lg font-semibold mb-4 text-primary">{t('footer.quickContact')}</h4>
             <div className="space-y-4">
               <a 
                 href="tel:+971542359965"
                 className="block bg-primary text-primary-foreground px-4 py-2 rounded-lg text-center font-medium hover:bg-primary/90 transition-colors"
               >
-                Call Now
+                {t('footer.callNow')}
               </a>
               <a 
                 href="mailto:samaalbayan.ts@gmail.com"
                 className="block border border-secondary-foreground/30 px-4 py-2 rounded-lg text-center font-medium hover:bg-secondary-foreground/10 transition-colors"
               >
-                Email Us
+                {t('footer.emailUs')}
               </a>
             </div>
           </div>
@@ -71,10 +72,10 @@ const Footer = () => {
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-secondary-foreground/60">
-              © 2024 Sama Albayan Technical Services. All rights reserved.
+              {t('footer.rights')}
             </p>
             <p className="text-sm text-secondary-foreground/60">
-              Manager: Mohammed Basheer Ahamed
+              {t('footer.manager')}
             </p>
           </div>
         </div>

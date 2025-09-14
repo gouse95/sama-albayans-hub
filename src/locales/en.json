@@ -1,0 +1,214 @@
+{
+  "hero": {
+    "companyName": "SAMA ALBAYAN",
+    "companyType": "Technical Services",
+    "tagline": "Your Trusted Partner for All Technical Services in Dubai & Sharjah",
+    "description": "From carpentry to electrical work, plumbing to AC maintenance - we deliver professional quality with 24/7 reliability.",
+    "callNow": "Call Now: +971 54 235 9965",
+    "callUs": "Call Us",
+    "email": "Email",
+    "serviceAreas": "Service Areas",
+    "serviceAreasText": "Dubai & Sharjah, UAE",
+    "scrollForServices": "Scroll for Services"
+  },
+  "services": {
+    "title": "Our Professional Services",
+    "subtitle": "Comprehensive technical solutions delivered by experienced professionals with a commitment to quality and reliability.",
+    "carpentry": {
+      "title": "Carpentry & Woodworks",
+      "description": "Custom furniture, cabinets, doors, and all woodworking solutions",
+      "features": ["Custom Furniture", "Cabinet Installation", "Door Repair", "Wood Finishing"]
+    },
+    "masonry": {
+      "title": "Tabook, Plaster & Block Works",
+      "description": "Professional masonry, plastering, and structural block work",
+      "features": ["Wall Construction", "Plastering", "Block Installation", "Surface Preparation"]
+    },
+    "tiling": {
+      "title": "Tile Fixing & Interlock Works",
+      "description": "Precision tile installation and interlock pavement solutions",
+      "features": ["Ceramic Tiles", "Marble Installation", "Interlock Pavement", "Waterproofing"]
+    },
+    "plumbing": {
+      "title": "Plumbing & Sanitary Works",
+      "description": "Complete plumbing solutions from repairs to full installations",
+      "features": ["Pipe Installation", "Leak Repairs", "Bathroom Fitting", "Water Systems"]
+    },
+    "electrical": {
+      "title": "Electrical Works",
+      "description": "Safe and reliable electrical installations and maintenance",
+      "features": ["Wiring Installation", "Switch Repair", "Circuit Breakers", "Safety Inspections"]
+    },
+    "painting": {
+      "title": "Painting & Finishing",
+      "description": "Professional interior and exterior painting services",
+      "features": ["Interior Painting", "Exterior Coating", "Wall Preparation", "Color Consultation"]
+    },
+    "ceiling": {
+      "title": "False Ceiling & Gypsum Works",
+      "description": "Modern ceiling solutions and decorative gypsum installations",
+      "features": ["False Ceiling", "Gypsum Decoration", "Lighting Integration", "Acoustic Solutions"]
+    },
+    "ac": {
+      "title": "AC Installation & Maintenance",
+      "description": "Complete air conditioning services for optimal comfort",
+      "features": ["AC Installation", "Regular Maintenance", "Duct Cleaning", "System Repair"]
+    },
+    "customSolution": {
+      "title": "Need a Custom Solution?",
+      "description": "Can't find exactly what you're looking for? We provide customized technical solutions tailored to your specific requirements.",
+      "button": "Discuss Your Project"
+    }
+  },
+  "about": {
+    "title": "Why Choose Sama Albayan?",
+    "subtitle": "With years of experience serving Dubai and Sharjah, we've built our reputation on delivering exceptional technical services that exceed customer expectations.",
+    "features": {
+      "comprehensive": {
+        "title": "Comprehensive Services",
+        "description": "From carpentry to AC maintenance, we're your one-stop solution for all technical needs."
+      },
+      "local": {
+        "title": "Local Expertise",
+        "description": "Deep understanding of UAE building standards and climate requirements."
+      },
+      "pricing": {
+        "title": "Competitive Pricing",
+        "description": "Fair, transparent pricing with free estimates for all projects."
+      }
+    },
+    "manager": {
+      "title": "Manager: Mohammed Basheer Ahamed",
+      "description": "Leading our team with extensive experience in technical services across the UAE. Committed to delivering excellence in every project."
+    },
+    "cards": {
+      "quality": {
+        "title": "Quality Assured",
+        "description": "Every project completed to the highest standards with quality materials"
+      },
+      "availability": {
+        "title": "24/7 Availability",
+        "description": "Emergency services available round the clock for urgent repairs"
+      },
+      "licensed": {
+        "title": "Licensed & Insured",
+        "description": "Fully licensed professionals with comprehensive insurance coverage"
+      },
+      "experienced": {
+        "title": "Experienced Team",
+        "description": "Skilled technicians with years of experience in UAE market"
+      }
+    },
+    "stats": {
+      "projects": "Projects Completed",
+      "emergency": "Emergency Service",
+      "experience": "Years Experience",
+      "satisfaction": "Customer Satisfaction"
+    }
+  },
+  "contact": {
+    "title": "Get Your Free Quote",
+    "subtitle": "Ready to start your project? Contact us today for a free consultation and detailed quote tailored to your needs.",
+    "info": {
+      "call": "Call Us",
+      "email": "Email Us",
+      "areas": "Service Areas",
+      "hours": "Working Hours",
+      "emergency": "24/7 Emergency Service",
+      "businessHours": "Mon-Sat: 8AM-8PM"
+    },
+    "quickActions": {
+      "title": "Need Immediate Help?",
+      "emergencyCall": "Emergency Call"
+    },
+    "form": {
+      "title": "Request Your Free Quote",
+      "name": "Full Name *",
+      "namePlaceholder": "Your full name",
+      "phone": "Phone Number *",
+      "phonePlaceholder": "+971 XX XXX XXXX",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "service": "Service Needed *",
+      "servicePlaceholder": "Select a service",
+      "message": "Project Details *",
+      "messagePlaceholder": "Please describe your project, timeline, and any specific requirements...",
+      "submit": "Send Quote Request",
+      "disclaimer": "* We'll respond within 2 hours during business hours. For emergencies, please call directly."
+    },
+    "services": {
+      "carpentry": "Carpentry & Woodworks",
+      "masonry": "Tabook, Plaster & Block Works",
+      "tiling": "Tile Fixing & Interlock Works",
+      "plumbing": "Plumbing & Sanitary Works",
+      "electrical": "Electrical Works",
+      "painting": "Painting & Finishing",
+      "ceiling": "False Ceiling & Gypsum Works",
+      "ac": "AC Installation & Maintenance",
+      "multiple": "Multiple Services",
+      "other": "Other"
+    },
+    "toast": {
+      "title": "Request Sent!",
+      "description": "We'll contact you shortly to discuss your project."
+    }
+  },
+  "footer": {
+    "companyName": "SAMA ALBAYAN",
+    "companyType": "Technical Services",
+    "description": "Your trusted partner for all technical services in Dubai & Sharjah. Professional quality with 24/7 reliability.",
+    "servicesTitle": "Our Services",
+    "services": {
+      "carpentry": "Carpentry & Woodworks",
+      "plumbing": "Plumbing & Sanitary Works",
+      "electrical": "Electrical Works",
+      "painting": "Painting & Finishing",
+      "ac": "AC Installation & Maintenance",
+      "tiling": "Tile Fixing & Interlock Works",
+      "ceiling": "False Ceiling & Gypsum Works",
+      "masonry": "Tabook, Plaster & Block Works"
+    },
+    "quickContact": "Quick Contact",
+    "callNow": "Call Now",
+    "emailUs": "Email Us",
+    "serviceAreas": "Dubai & Sharjah, UAE",
+    "rights": "© 2024 Sama Albayan Technical Services. All rights reserved.",
+    "manager": "Manager: Mohammed Basheer Ahamed"
+  },
+  "gallery": {
+    "title": "Our Work Gallery",
+    "subtitle": "Explore our completed projects and see the quality craftsmanship that sets us apart in Dubai & Sharjah.",
+    "ac": {
+      "title": "Air Conditioning Installation & Maintenance"
+    },
+    "parking": {
+      "title": "Automatic Parking Doors Installation"
+    },
+    "ceiling": {
+      "title": "False Ceiling & Gypsum Works"
+    },
+    "painting": {
+      "title": "Professional Painting Works"
+    },
+    "plumbing": {
+      "title": "Plumbing & Sanitary Fitting Works"
+    },
+    "masonry": {
+      "title": "Tabbok & Plaster Works"
+    },
+    "tiling": {
+      "title": "Tile Fixing & Interlock Works"
+    },
+    "carpentry": {
+      "title": "Wood & Carpentry Works"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu"
+  }
+}
